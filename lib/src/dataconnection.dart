@@ -193,6 +193,7 @@ class DataConnection extends BaseConnection {
       dynamic deserializedData = jsonDecode(message.text);
 
       provider?.emit('data', deserializedData);
+      super.emit('data', deserializedData);  
     }
 
     if (datatype == MessageType.binary) {
